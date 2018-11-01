@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000px" height="1000px" viewBox="0 0 1000 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="1000" height="1000"></rect>
+    </defs>
+    <g id="Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Rectangle" fill="#FFFFFF" xlink:href="#path-1"></use>
+        <g id="Group" mask="url(#mask-2)">
+            <g transform="translate(-1.000000, 0.000000)"></g>
+        </g>
+        <g id="Group-2" mask="url(#mask-2)" stroke="#000000" stroke-width="20">
+            <polygon id="Path" stroke-linejoin="round" points="200 0 1000 0 1000 1000 0 1000 0 200"></polygon>
+            <polyline id="Path-2" stroke-linejoin="round" points="0 197 200 197 200 0"></polyline>
+            <path d="M304,198.396396 L902,198.396396" id="Line-3-Copy-2" stroke-linecap="square"></path>
+            <path d="M107.5,398.796797 L902,398.796797" id="Line-3-Copy-3" stroke-linecap="square"></path>
+            <path d="M107.5,597.193193 L902,597.193193" id="Line-3-Copy-4" stroke-linecap="square"></path>
+            <polyline id="Line-3-Copy-5" stroke-linecap="square" points="108 795.339089 190.690661 795.339089 902 795.339089"></polyline>
+        </g>
+    </g>
+</svg>

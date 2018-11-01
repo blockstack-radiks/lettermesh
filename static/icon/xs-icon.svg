@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="110px" viewBox="0 0 100 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>XS Icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="XS-Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Path" stroke="#000000" stroke-width="3" fill="#FFFFFF" stroke-linejoin="round" points="20 0 100 0 100 110 0 110 0 22"></polygon>
+        <polyline id="Path-2" stroke="#000000" stroke-width="3" stroke-linejoin="round" points="0 20 20 20 20 0"></polyline>
+        <path d="M36.0733333,23 L79.9266667,23" id="Line-3-Copy-2" stroke="#000000" stroke-width="3" stroke-linecap="square"></path>
+        <path d="M20.0521817,43.0440993 L79.6479004,43.0440993" id="Line-3-Copy-3" stroke="#000000" stroke-width="3" stroke-linecap="square"></path>
+        <path d="M20.0884611,64.1763972 L79.6841797,64.1763972" id="Line-3-Copy-4" stroke="#000000" stroke-width="3" stroke-linecap="square"></path>
+        <polyline id="Line-3-Copy-5" stroke="#000000" stroke-width="3" stroke-linecap="square" points="22 84.3307447 28.0403757 84.3307447 80 84.3307447"></polyline>
+    </g>
+</svg>
