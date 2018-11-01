@@ -1,19 +1,44 @@
 import React from 'react';
-import { Flex, Box } from 'blockstack-ui';
-// import Link from 'next/link';
+import { Flex, Box, Button } from 'blockstack-ui';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 import Head from '../components/head';
-// import Nav from '../components/nav';
 import Brand from '../components/brand';
 
-const Home = () => (
-  <div>
-    <Head title="Home" />
-    <Flex>
-      <Box width={1} justifyContent="center">
-        <Brand />
-      </Box>
-    </Flex>
-  </div>
-);
+import UserActions from '../stores/user/actions';
 
-export default Home;
+class Home extends React.Component {
+  componentDidMount() {
+    this.props.handleLogIn();
+  }
+
+  render() {
+    const { currentUser } = this.props;
+    return (
+      <div>
+        <Head title="Home" />
+        <Flex flexWrap="wrap">
+          <Box width={1} justifyContent="center">
+            <Brand />
+          </Box>
+          <Box mt={4}>
+            {currentUser ? (
+              <Button onClick={this.props.logout}>Log Out</Button>
+            ) : (
+              <Button onClick={this.props.login}>Log In</Button>
+            )}
+          </Box>
+        </Flex>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = state => ({
+  currentUser: state.user.currentUser,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(Object.assign({}, UserActions), dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

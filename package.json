@@ -1,5 +1,6 @@
 {
   "name": "create-next-example-app",
+  "license": "MIT",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -7,6 +8,8 @@
   },
   "dependencies": {
     "blockstack-ui": "^0.0.40",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
     "next": "7.0.2",
     "radiks": "file:../radiks",
     "radiks-server": "file:../server",
@@ -17,7 +20,8 @@
     "redux": "^4.0.1",
     "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^4.0.3"
+    "styled-components": "^4.0.3",
+    "styled-system": "^3.1.11"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
@@ -26,5 +30,14 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.0"
+  },
+  "nodemonConfig": {
+    "verbose": true,
+    "ignore": [
+      ".next/*",
+      ".next",
+      "pages/*",
+      "components/*"
+    ]
   }
 }
