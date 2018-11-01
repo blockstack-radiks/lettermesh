@@ -8,9 +8,15 @@
   "dependencies": {
     "blockstack-ui": "^0.0.40",
     "next": "7.0.2",
+    "radiks": "file:../radiks",
+    "radiks-server": "file:../server",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-hot-loader": "^4.3.11",
+    "react-redux": "^5.1.0",
+    "redux": "^4.0.1",
+    "redux-persist": "^5.10.0",
+    "redux-thunk": "^2.3.0",
     "styled-components": "^4.0.3"
   },
   "devDependencies": {

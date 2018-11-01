@@ -1,8 +1,14 @@
 import App, { Container } from 'next/app';
 import React from 'react';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { theme } from 'blockstack-ui';
 import { normalize } from 'polished';
+import { configure } from 'radiks';
+import getConfig from 'next/config';
+
+import withReduxStore from '../lib/with-redux-store';
 
 /**
  * Reset our styles
@@ -41,7 +47,7 @@ a:link {
 }
 `;
 
-class MyApp extends App {
+class LetterMesh extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
 
@@ -49,24 +55,34 @@ class MyApp extends App {
       pageProps = await Component.getInitialProps(ctx);
     }
 
-    const props = {
-      ...pageProps,
-    };
+    const cookies = ctx.req && ctx.req.universalCookies && ctx.req.universalCookies.cookies;
 
     return {
-      pageProps: props,
+      pageProps,
+      cookies,
     };
   }
 
+  componentDidMount() {
+    const radiksConfig = getConfig().publicRuntimeConfig.radiks;
+    configure(radiksConfig);
+  }
+
   render() {
-    const { Component, pageProps } = this.props;
+    const {
+      Component, pageProps, reduxStore, persistor, cookies,
+    } = this.props;
 
     return (
       <Container>
         <>
           <Global />
           <ThemeProvider theme={{ ...theme, transitions: ['unset', '.34s all cubic-bezier(.19,1,.22,1)'] }}>
-            <Component {...pageProps} />
+            <Provider store={reduxStore}>
+              <PersistGate persistor={persistor}>
+                <Component {...pageProps} serverCookies={cookies} />
+              </PersistGate>
+            </Provider>
           </ThemeProvider>
         </>
       </Container>
@@ -74,4 +90,4 @@ class MyApp extends App {
   }
 }
 
-export default MyApp;
+export default withReduxStore(LetterMesh);
