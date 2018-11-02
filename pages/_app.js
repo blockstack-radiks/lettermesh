@@ -8,6 +8,8 @@ import { normalize } from 'polished';
 import { configure } from 'radiks';
 import getConfig from 'next/config';
 
+import Layout from '../components/layout';
+
 import withReduxStore from '../lib/with-redux-store';
 
 /**
@@ -80,7 +82,9 @@ class LetterMesh extends App {
           <ThemeProvider theme={{ ...theme, transitions: ['unset', '.34s all cubic-bezier(.19,1,.22,1)'] }}>
             <Provider store={reduxStore}>
               <PersistGate persistor={persistor}>
-                <Component {...pageProps} serverCookies={cookies} />
+                <Layout>
+                  <Component {...pageProps} serverCookies={cookies} />
+                </Layout>
               </PersistGate>
             </Provider>
           </ThemeProvider>

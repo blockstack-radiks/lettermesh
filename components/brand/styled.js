@@ -1,21 +1,21 @@
 import Styled from 'styled-components';
 
 export const Icon = Styled.img`
-  width: 65px;
-  height: 84px;
+  width: 22px;
+  height: 42px;
 `;
 
 export const Name = Styled.div`
-  font-size: 64px;
+  font-size: 24px;
   font-weight: bold;
   position: relative;
-  top: -9px;
+  top: 0px;
 `;
 
 export const SubName = Styled.div`
-  font-size: 32px;
+  font-size: 18px;
   position: relative;
-  top: -25px;
+  top: -4px;
 `;
 
 export const Container = Styled.div`
