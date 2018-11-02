@@ -7,6 +7,7 @@ import { theme } from 'blockstack-ui';
 import { normalize } from 'polished';
 import { configure } from 'radiks';
 import getConfig from 'next/config';
+import { withRouter } from 'next/router';
 
 import Layout from '../components/layout';
 
@@ -68,6 +69,9 @@ class LetterMesh extends App {
   componentDidMount() {
     const radiksConfig = getConfig().publicRuntimeConfig.radiks;
     configure(radiksConfig);
+    const { router } = this.props;
+    router.events.on('routeChangeStart', () => NProgress.start());
+    router.events.on('routeChangeComplete', () => NProgress.done());
   }
 
   render() {
@@ -94,4 +98,4 @@ class LetterMesh extends App {
   }
 }
 
-export default withReduxStore(LetterMesh);
+export default withRouter(withReduxStore(LetterMesh));
