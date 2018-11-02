@@ -10,7 +10,7 @@ export default class Layout extends React.Component {
       <div>
         <Nav />
         <Flex>
-          <Box width={[1, 0.9]} mt={6}>
+          <Box width={[1, 0.9]} mt={6} mx={[2, 6]}>
             {children}
           </Box>
         </Flex>

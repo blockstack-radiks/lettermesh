@@ -21,10 +21,14 @@ module.exports = {
     'import/no-extraneous-dependencies': [0],
     'react/prefer-stateless-function': [0],
     'react/prop-types': [1],
-    "react/destructuring-assignment": [1]
+    "react/destructuring-assignment": [1],
+    "jsx-a11y/anchor-is-valid": [0]
   },
   env: {
     browser: true,
+  },
+  globals: {
+    NProgress: true,
   },
   parser: 'babel-eslint',
 };

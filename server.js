@@ -29,6 +29,20 @@ app.prepare().then(async () => {
     res.sendFile(path.join(__dirname, 'static', 'manifest.json'));
   });
 
+  server.get('/blogs/new', (req, res) => {
+    const { params } = req;
+    app.render(req, res, '/blogs/new', params);
+  });
+
+  server.get('/blogs/:id', (req, res) => {
+    const { params } = req;
+    app.render(req, res, '/blogs/show', params);
+  });
+
+  server.get('/blogs/:id/posts/new', (req, res) => {
+    app.render(req, res, '/blogs/posts/new', req.params);
+  });
+
   server.get('*', (req, res) => handle(req, res));
 
   server.listen(port, (err) => {

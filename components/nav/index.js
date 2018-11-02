@@ -7,7 +7,7 @@ export default class Nav extends React.Component {
   render() {
     return (
       <Flex mt={3}>
-        <Box ml={6}>
+        <Box mx={[2, 6]}>
           <Brand />
         </Box>
       </Flex>
