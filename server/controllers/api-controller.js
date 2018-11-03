@@ -1,5 +1,7 @@
 const express = require('express');
 
+const { getGraphiteHTML } = require('../helpers');
+
 const makeApiController = (db) => {
   const router = express.Router();
 
@@ -9,12 +11,24 @@ const makeApiController = (db) => {
     const match = {
       $match: { _id: req.params.id },
     };
-    const lookup = {
+    const blogLookup = {
       $lookup: {
         from: 'radiks-server-data', localField: 'userGroupId', foreignField: '_id', as: 'blog',
       },
     };
-    const [blogPost] = await db.aggregate([match, lookup]).toArray();
+    const authorLookup = {
+      $lookup: {
+        from: 'radiks-server-data', localField: 'authorName', foreignField: '_id', as: 'author',
+      },
+    };
+    const [blogPost] = await db.aggregate([match, blogLookup, authorLookup]).toArray();
+    const [author] = blogPost.author;
+    const [blog] = blogPost.blog;
+    blogPost.author = author;
+    blogPost.blog = blog;
+
+    const { graphiteUrl } = blogPost;
+    blogPost.sanitizedContent = await getGraphiteHTML(graphiteUrl);
     res.json(blogPost);
   });
 
