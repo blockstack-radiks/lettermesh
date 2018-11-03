@@ -3,12 +3,12 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
-import { theme } from 'blockstack-ui';
 import { normalize } from 'polished';
 import { configure } from 'radiks';
 import getConfig from 'next/config';
 import { withRouter } from 'next/router';
 
+import theme from '../lib/theme';
 import Layout from '../components/layout';
 
 import withReduxStore from '../lib/with-redux-store';
@@ -31,7 +31,7 @@ body{
 flex-grow: 1;
 }
 body, html{
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   min-height: 100%;
   margin: 0;
   height: auto;
@@ -82,6 +82,8 @@ class LetterMesh extends App {
       Component, pageProps, reduxStore, persistor, cookies,
     } = this.props;
 
+    const { useContainer } = pageProps;
+
     return (
       <Container>
         <>
@@ -89,7 +91,7 @@ class LetterMesh extends App {
           <ThemeProvider theme={{ ...theme, transitions: ['unset', '.34s all cubic-bezier(.19,1,.22,1)'] }}>
             <Provider store={reduxStore}>
               <PersistGate persistor={persistor}>
-                <Layout>
+                <Layout useContainer={useContainer}>
                   <Component {...pageProps} serverCookies={cookies} />
                 </Layout>
               </PersistGate>

@@ -21,6 +21,7 @@ export default class MyDocument extends Document {
       <html lang="en">
         <Head>
           <link rel="stylesheet" href="/static/nprogress.css" />
+          <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Roboto+Slab:400,700" rel="stylesheet" />
           <script src="/static/nprogress.js" />
           {this.props.styleTags}
         </Head>

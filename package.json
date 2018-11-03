@@ -40,7 +40,8 @@
       ".next/*",
       ".next",
       "pages/*",
-      "components/*"
+      "components/*",
+      "lib/*"
     ]
   }
 }
