@@ -50,6 +50,8 @@ a:link {
 }
 `;
 
+const radiksConfig = getConfig().publicRuntimeConfig.radiks;
+
 class LetterMesh extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
@@ -60,6 +62,8 @@ class LetterMesh extends App {
 
     const cookies = ctx.req && ctx.req.universalCookies && ctx.req.universalCookies.cookies;
 
+    configure(radiksConfig);
+
     return {
       pageProps,
       cookies,
@@ -67,7 +71,6 @@ class LetterMesh extends App {
   }
 
   componentDidMount() {
-    const radiksConfig = getConfig().publicRuntimeConfig.radiks;
     configure(radiksConfig);
     const { router } = this.props;
     router.events.on('routeChangeStart', () => NProgress.start());

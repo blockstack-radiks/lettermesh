@@ -10,6 +10,10 @@ export default class BlogPost extends Model {
       type: String,
       decrypted: true,
     },
+    authorName: {
+      type: String,
+      decrypted: true,
+    },
     userGroupId: {
       type: String,
       decrypted: true,

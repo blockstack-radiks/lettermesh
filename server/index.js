@@ -5,6 +5,8 @@ require('dotenv').config();
 
 const { setup } = require('radiks-server');
 
+const makeApiController = require('./controllers/api-controller');
+
 const dev = process.env.NODE_ENV !== 'production';
 
 const app = next({ dev });
@@ -18,6 +20,8 @@ app.prepare().then(async () => {
   const RadiksController = await setup();
 
   server.use('/radiks', RadiksController);
+
+  server.use('/api', makeApiController(RadiksController.db));
 
   server.use((req, res, _next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -41,6 +45,10 @@ app.prepare().then(async () => {
 
   server.get('/blogs/:id/posts/new', (req, res) => {
     app.render(req, res, '/blogs/posts/new', req.params);
+  });
+
+  server.get('/posts/:id', (req, res) => {
+    app.render(req, res, '/posts/show', req.params);
   });
 
   server.get('*', (req, res) => handle(req, res));
