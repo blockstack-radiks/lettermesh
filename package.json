@@ -10,6 +10,7 @@
     "blockstack-ui": "^0.0.40",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
+    "moment": "^2.22.2",
     "next": "7.0.2",
     "radiks": "file:../radiks",
     "radiks-server": "file:../server",

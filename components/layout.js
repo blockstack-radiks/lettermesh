@@ -1,16 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Flex, Box } from 'blockstack-ui';
 
 import Nav from './nav';
 
 export default class Layout extends React.Component {
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+    useContainer: PropTypes.bool,
+  }
+
+  static defaultProps = {
+    useContainer: true,
+  }
+
   render() {
-    const { children } = this.props;
+    const { children, useContainer } = this.props;
+    const width = useContainer ? [1, 0.9] : 1;
+    const mx = useContainer ? [2, 6] : 0;
     return (
       <div>
         <Nav />
         <Flex>
-          <Box width={[1, 0.9]} mt={6} mx={[2, 6]}>
+          <Box width={width} mt={6} mx={mx}>
             {children}
           </Box>
         </Flex>

@@ -1,7 +1,8 @@
 import React from 'react';
 
 import { fetchBlogPost } from '../../lib/api';
-import BlogPost from '../../models/blogPost';
+import PostHeader from '../../components/post-header';
+import PostBody from '../../components/post-body';
 
 export default class ShowBlogPost extends React.Component {
   static async getInitialProps({ query }) {
@@ -9,18 +10,17 @@ export default class ShowBlogPost extends React.Component {
     const blogPost = await fetchBlogPost(id);
     return {
       blogPost,
+      useContainer: false,
     };
-    // const blogPost = await BlogPost.findById(id, { decrypt: false });
-    // console.log(blogPost);
-    // return {
-    //   blogPost: blogPost.attrs,
-    // };
   }
 
   render() {
     const { blogPost } = this.props;
     return (
-      <span>{blogPost.graphiteUrl}</span>
+      <>
+        <PostHeader blogPost={blogPost} />
+        <PostBody content={blogPost.sanitizedContent} />
+      </>
     );
   }
 }
