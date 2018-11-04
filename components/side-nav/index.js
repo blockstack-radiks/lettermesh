@@ -48,9 +48,9 @@ export default class extends React.Component {
     const { open } = this.state;
     return (
       <Container open={open}>
-        <Item hover={false}>
+        <Label>
           <CloseCircleOutlineIcon onClick={() => this.toggle()} />
-        </Item>
+        </Label>
         {/* <Item>
           <Link href="/blogs">
             <a>Your Blogs</a>

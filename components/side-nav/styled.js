@@ -51,11 +51,14 @@ Item.defaultProps = {
 export const Label = Styled(Item)`
   font-weight: bold;
   color: ${({ theme }) => theme.colors.textGray};
+
+  &:hover {
+    background: none;
+  }
 `;
 
 Label.defaultProps = {
   ...Item.defaultProps,
-  hover: false,
 };
 
 export const Divider = Styled(Box)`
