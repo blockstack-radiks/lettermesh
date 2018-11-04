@@ -43,6 +43,10 @@ app.prepare().then(async () => {
     app.render(req, res, '/blogs/show', params);
   });
 
+  server.get('/blogs/:id/edit', (req, res) => {
+    app.render(req, res, '/blogs/edit', req.params);
+  });
+
   server.get('/blogs/:id/posts/new', (req, res) => {
     app.render(req, res, '/blogs/posts/new', req.params);
   });

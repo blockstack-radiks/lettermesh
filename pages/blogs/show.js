@@ -1,8 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
-import { Flex, Box, Type } from 'blockstack-ui';
-import { UserGroup } from 'radiks';
-import Card from '../../components/card';
+import {
+  Box, Type, Button,
+} from 'blockstack-ui';
+import moment from 'moment';
+
+import Blog from '../../models/blog';
+import BlogPost from '../../models/blogPost';
+import Hr from '../../components/hr';
+import { Table, Th, Td } from '../../components/table';
 
 export default class ShowBlog extends React.Component {
   static getInitialProps({ query }) {
@@ -13,34 +19,80 @@ export default class ShowBlog extends React.Component {
 
   state = {
     blog: null,
+    blogPosts: [],
   }
 
   async componentDidMount() {
     NProgress.start();
     const { id } = this.props;
-    const blog = await UserGroup.findById(id);
-    this.setState({ blog }, () => {
+    const [blog, blogPosts] = await Promise.all([
+      Blog.findById(id),
+      BlogPost.fetchList({
+        userGroupId: id,
+      }),
+    ]);
+    this.setState({ blog, blogPosts }, () => {
       NProgress.done();
     });
   }
 
+  blogPosts() {
+    return this.state.blogPosts.map(blogPost => (
+      <tr key={blogPost._id}>
+        <Td>{blogPost.attrs.title}</Td>
+        <Td>{blogPost.attrs.authorName}</Td>
+        <Td>{moment(blogPost.attrs.createdAt).format('MMMM Do, YYYY')}</Td>
+        <Td>
+          <Link href={`/blogs/${this.props.id}/posts/${blogPost._id}/edit`}>
+            <Button size="small" ml={0}>
+              Edit
+            </Button>
+          </Link>
+          <Link href={`/posts/${blogPost._id}`}>
+            <Button size="small" ml={0}>
+              View
+            </Button>
+          </Link>
+        </Td>
+      </tr>
+    ));
+  }
+
   render() {
     const { blog } = this.state;
-    console.log(blog);
     if (!blog) return null;
     return (
       <Box>
-        <Type.h1 display="block">{blog.attrs.name}</Type.h1>
-        <Type.h3 mt={3} display="block">Blog Posts</Type.h3>
-        <Flex mt={3}>
-          <Box width={1 / 6} mr={3}>
-            <Card>
-              <Link passHref href={`/blogs/${blog._id}/posts/new`}>
-                <Type textAlign="center" display="block" is="a">Write a new post</Type>
-              </Link>
-            </Card>
-          </Box>
-        </Flex>
+        <Type.h1 display="block">
+          {blog.attrs.name}
+          <Link href={`/blogs/${blog._id}/edit`} passHref>
+            <Button size="small" mt={4}>
+              Edit
+            </Button>
+          </Link>
+        </Type.h1>
+        <Hr />
+        <Type.h3 mt={3} display="block">
+          Blog Posts
+          <Link href={`/blogs/${blog._id}/posts/new`} passHref>
+            <Button size="small" mt={4}>
+              Write a New Post
+            </Button>
+          </Link>
+        </Type.h3>
+        <Table mt={6}>
+          <thead>
+            <tr>
+              <Th>Title</Th>
+              <Th>Author</Th>
+              <Th>Created</Th>
+              <Th>Actions</Th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.blogPosts()}
+          </tbody>
+        </Table>
       </Box>
     );
   }

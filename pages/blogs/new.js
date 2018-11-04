@@ -4,7 +4,7 @@ import {
   Flex, Box, Button,
 } from 'blockstack-ui';
 
-import { UserGroup } from 'radiks';
+import Blog from '../../models/blog';
 import Card from '../../components/card';
 import Input from '../../components/input';
 
@@ -18,7 +18,7 @@ export default class NewBlog extends React.Component {
     NProgress.start();
     if (evt) evt.preventDefault();
     const { name } = this.state;
-    const blog = new UserGroup({ name });
+    const blog = new Blog({ name });
     await blog.create();
     console.log(blog);
     console.log(this.state);
