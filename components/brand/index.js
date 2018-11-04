@@ -10,7 +10,7 @@ import {
 export default ({ href }) => (
   <Link href="/" passHref>
     <Container href={href}>
-      <Flex mx="auto" width="390px">
+      <Flex mx="auto" max-width="250px">
         <Box><Icon src="/static/icon/xs-icon.svg" /></Box>
         <Box ml={1}>
           <Name>LetterMesh</Name>

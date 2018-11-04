@@ -14,4 +14,11 @@ export const Content = Styled.div`
     text-indent: 1em;
     margin-top: 60px;
   }
+
+  img {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
 `;

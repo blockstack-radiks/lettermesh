@@ -22,7 +22,7 @@ export default class Layout extends React.Component {
       <div>
         <Nav />
         <Flex>
-          <Box width={width} mt={6} mx={mx}>
+          <Box width={width} mt={useContainer ? 6 : 2} mx={mx}>
             {children}
           </Box>
         </Flex>
