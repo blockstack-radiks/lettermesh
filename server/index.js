@@ -51,6 +51,10 @@ app.prepare().then(async () => {
     app.render(req, res, '/blogs/posts/new', req.params);
   });
 
+  server.get('/blogs/:blogId/posts/:id/edit', (req, res) => {
+    app.render(req, res, '/blogs/posts/edit', req.params);
+  });
+
   server.get('/posts/:id', (req, res) => {
     app.render(req, res, '/posts/show', req.params);
   });

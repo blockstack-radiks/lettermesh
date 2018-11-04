@@ -26,7 +26,7 @@ export default ({ blogPost }) => (
         </Flex>
       </Box>
       <Box width={[0, 0.5]} ml={[0, 4]}>
-        <Image src="https://images.unsplash.com/photo-1533825141470-9c2740110f0f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5a27c17087938fd8d4972450bd5d4256&auto=format" />
+        <Image src={blogPost.headerImageUrl} />
       </Box>
     </Flex>
   </Container>

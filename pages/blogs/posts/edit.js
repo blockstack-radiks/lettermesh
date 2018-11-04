@@ -7,13 +7,16 @@ import { loadUserData } from 'blockstack/lib/auth/authApp';
 import Card from '../../../components/card';
 import Input from '../../../components/input';
 
+import { makeGraphiteUrl } from '../../../lib/utils';
+
 import BlogPost from '../../../models/blogPost';
 
-export default class NewBlogPost extends React.Component {
+export default class EditBlogPost extends React.Component {
   static getInitialProps({ query }) {
     console.log(query);
     return {
-      blogId: query.id,
+      blogId: query.blogId,
+      id: query.id,
     };
   }
 
@@ -21,25 +24,42 @@ export default class NewBlogPost extends React.Component {
     title: '',
     graphiteUrl: '',
     headerImageUrl: '',
+    blogPost: null,
+  }
+
+  async componentDidMount() {
+    NProgress.start();
+    const { id } = this.props;
+    const blogPost = await BlogPost.findById(id);
+    const {
+      title, graphiteID, graphiteUsername, headerImageUrl,
+    } = blogPost.attrs;
+    this.setState({
+      blogPost,
+      title,
+      headerImageUrl,
+      graphiteUrl: makeGraphiteUrl(graphiteUsername, graphiteID),
+    }, () => {
+      NProgress.done();
+    });
   }
 
   async save() {
     NProgress.start();
     const { graphiteUrl, title, headerImageUrl } = this.state;
-    const { blogId } = this.props;
     const graphitePaths = graphiteUrl.split('/');
     const graphitePath = graphitePaths[graphitePaths.length - 1];
     const [graphiteUsername, graphiteID] = graphitePath.split('-');
     const graphiteJSONUrl = await getUserAppFileUrl(`public/${graphiteID}.json`, graphiteUsername, 'https://app.graphitedocs.com');
     const { username } = loadUserData();
-    const blogPost = new BlogPost({
+    const { blogPost } = this.state;
+    blogPost.update({
       title,
       graphiteUrl: graphiteJSONUrl,
       graphiteID,
       graphiteUsername,
-      headerImageUrl,
-      userGroupId: blogId,
       authorName: username,
+      headerImageUrl,
     });
     await blogPost.save();
     Router.push({
@@ -49,16 +69,17 @@ export default class NewBlogPost extends React.Component {
       },
     }, `/posts/${blogPost._id}`);
     console.log(blogPost);
-
-    // NProgress.done();
   }
 
   render() {
-    const { title, graphiteUrl, headerImageUrl } = this.state;
+    const {
+      title, graphiteUrl, blogPost, headerImageUrl,
+    } = this.state;
+    if (!blogPost) return null;
     return (
       <Flex>
         <Box width={[1, 0.6]} mx="auto">
-          <Card title="New Blog Post">
+          <Card title="Edit Blog Post">
             <Input
               placeholder="Title"
               value={title}
@@ -77,7 +98,7 @@ export default class NewBlogPost extends React.Component {
               onChange={evt => this.setState({ headerImageUrl: evt.target.value })}
             />
             <Button mt={5} width={1} onClick={() => this.save()}>
-              Create
+              Update
             </Button>
           </Card>
         </Box>

@@ -10,7 +10,19 @@ export default class BlogPost extends Model {
       type: String,
       decrypted: true,
     },
+    graphiteID: {
+      type: String,
+      decrypted: true,
+    },
+    graphiteUsername: {
+      type: String,
+      decrypted: true,
+    },
     authorName: {
+      type: String,
+      decrypted: true,
+    },
+    headerImageUrl: {
       type: String,
       decrypted: true,
     },
