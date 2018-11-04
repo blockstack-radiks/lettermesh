@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { fetchBlogPost } from '../../lib/api';
+import { makeGraphiteUrl } from '../../lib/utils';
 import PostHeader from '../../components/post-header';
 import PostBody from '../../components/post-body';
 
@@ -19,7 +20,10 @@ export default class ShowBlogPost extends React.Component {
     return (
       <>
         <PostHeader blogPost={blogPost} />
-        <PostBody content={blogPost.sanitizedContent} />
+        <PostBody
+          content={blogPost.sanitizedContent}
+          graphiteUrl={makeGraphiteUrl(blogPost.graphiteUsername, blogPost.graphiteID)}
+        />
       </>
     );
   }
