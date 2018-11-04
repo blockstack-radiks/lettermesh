@@ -4,7 +4,7 @@ import { space } from 'styled-system';
 export const Container = Styled.div`
   ${space};
   width: 100%;
-  background: #f1f1f1;
+  background: ${({ theme }) => theme.colors.grayBG};
   box-shadow: 0 6px 6px -4px #ddd;
 `;
 

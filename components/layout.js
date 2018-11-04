@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Flex, Box } from 'blockstack-ui';
 
 import Nav from './nav';
+import Footer from './footer';
 
 export default class Layout extends React.Component {
   static propTypes = {
@@ -26,6 +27,7 @@ export default class Layout extends React.Component {
             {children}
           </Box>
         </Flex>
+        <Footer />
       </div>
     );
   }
