@@ -17,7 +17,7 @@ export default class Layout extends React.Component {
   render() {
     const { children, useContainer } = this.props;
     const width = useContainer ? [1, 0.9] : 1;
-    const mx = useContainer ? [2, 6] : 0;
+    const mx = useContainer ? [2, 8] : 0;
     return (
       <div>
         <Nav />
