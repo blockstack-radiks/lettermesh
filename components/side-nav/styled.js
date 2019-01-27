@@ -4,6 +4,7 @@ import { Flex, Box } from 'blockstack-ui';
 export const Container = Styled(Flex)`
   height: 100vh;
   width: 300px;
+  z-index: 100;
   overflow-y: scroll;
   border-left: 1px solid #ccc;
   box-shadow: -4px 0 6px -4px #ccc;
@@ -13,7 +14,7 @@ export const Container = Styled(Flex)`
   background: white;
   transition: .34s transform cubic-bezier(.19,1,.22,1);
   // display: ${({ open }) => (open ? 'block' : 'none')}
-  transform: translate(${({ open }) => (open ? 0 : '100%')})
+  transform: translate(${({ open }) => (open ? 0 : '100%')});
 `;
 
 Container.defaultProps = {

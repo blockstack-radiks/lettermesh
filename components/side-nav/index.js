@@ -15,9 +15,10 @@ export default class extends React.Component {
   }
 
   async componentDidMount() {
-    const blogs = await UserGroup.myGroups();
-    console.log(blogs);
-    this.setState({ blogs });
+    if (loadUserData()) {
+      const blogs = await UserGroup.myGroups();
+      this.setState({ blogs });
+    }
   }
 
   toggle() {
