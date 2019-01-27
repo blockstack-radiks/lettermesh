@@ -11,6 +11,7 @@ export default class ShowBlogPost extends React.Component {
     const blogPost = await fetchBlogPost(id);
     return {
       blogPost,
+      blogHeaderImage: blogPost.blog.typefaceImageUrl,
       useContainer: false,
     };
   }

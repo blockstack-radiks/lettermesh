@@ -12,10 +12,13 @@ export default class Nav extends React.Component {
   }
 
   render() {
+    const { blogHeaderImage } = this.props;
     return (
       <Flex mt={3} style={{ overflowX: 'hidden' }}>
         <Box mx={[2, 8]}>
-          <Brand />
+          {blogHeaderImage ? (
+            <img src={blogHeaderImage} alt="Header" height="40" />
+          ) : <Brand />}
         </Box>
         <Box ml="auto" mr={[2, 8]} mt={2}>
           <BackburgerIcon onClick={() => this.sideNav.current.toggle()} style={{ cursor: 'pointer' }} />

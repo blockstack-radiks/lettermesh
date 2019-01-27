@@ -91,7 +91,7 @@ class LetterMesh extends App {
           <ThemeProvider theme={{ ...theme, transitions: ['unset', '.34s all cubic-bezier(.19,1,.22,1)'] }}>
             <Provider store={reduxStore}>
               <PersistGate persistor={persistor}>
-                <Layout useContainer={useContainer}>
+                <Layout useContainer={useContainer} blogHeaderImage={pageProps && pageProps.blogHeaderImage}>
                   <Component {...pageProps} serverCookies={cookies} />
                 </Layout>
               </PersistGate>
