@@ -2,7 +2,7 @@
   "name": "create-next-example-app",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
+    "dev": "nodemon server",
     "build": "next build",
     "start": "next start"
   },
