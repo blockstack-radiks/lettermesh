@@ -1,4 +1,5 @@
 import { Model } from 'radiks';
+import { makeShortId } from '../lib/utils';
 
 export default class BlogPost extends Model {
   static schema = {
@@ -30,5 +31,14 @@ export default class BlogPost extends Model {
       type: String,
       decrypted: true,
     },
+    friendlyId: {
+      type: String,
+      decrypted: true,
+    },
+  }
+
+  beforeSave = () => {
+    this.attrs.friendlyId = this.attrs.friendlyId || makeShortId();
+    return this;
   }
 }
