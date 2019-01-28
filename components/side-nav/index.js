@@ -34,7 +34,16 @@ export default class extends React.Component {
         <Divider />
         <Label>{blog.attrs.name}</Label>
         <Item>
-          <Link href={`/blogs/${friendlyId(blog)}`}>
+          <Link
+            prefetch
+            href={{
+              pathname: '/blogs/show',
+              query: {
+                id: friendlyId(blog),
+              },
+              as: `/blogs/${friendlyId(blog)}`,
+            }}
+          >
             <a>View all Posts</a>
           </Link>
         </Item>

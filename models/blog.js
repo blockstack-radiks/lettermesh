@@ -11,6 +11,10 @@ export default class Blog extends UserGroup {
       type: String,
       decrypted: true,
     },
+    description: {
+      type: String,
+      decrypted: true,
+    },
     friendlyId: {
       type: String,
       decrypted: true,

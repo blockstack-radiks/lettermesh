@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000px" height="1000px" viewBox="0 0 1000 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Mesh</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Mesh" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2" transform="translate(40.000000, 80.000000)" stroke-width="5">
+            <path d="M160,700 L460,420" id="Line-2" stroke="#979797" stroke-linecap="square"></path>
+            <path d="M460,420 L740,140" id="Line-2-Copy-3" stroke="#979797" stroke-linecap="square"></path>
+            <path d="M180,140 L460,420" id="Line-2-Copy-12" stroke="#979797" stroke-linecap="square"></path>
+            <path d="M460,420 L760,700" id="Line-2-Copy-13" stroke="#979797" stroke-linecap="square"></path>
+            <path d="M160,700 L460,760" id="Line-2-Copy" stroke="#979797" stroke-linecap="square"></path>
+            <path d="M820,420 L760,700" id="Line-2-Copy-7" stroke="#979797" stroke-linecap="square"></path>
+            <path d="M180,140 L100,420" id="Line-2-Copy-8" stroke="#979797" stroke-linecap="square"></path>
+            <path d="M100,420 L160,700" id="Line-2-Copy-9" stroke="#979797" stroke-linecap="square"></path>
+            <path d="M100,420 L460,420" id="Line-2-Copy-4" stroke="#979797" stroke-linecap="square"></path>
+            <path d="M460,420 L820,420" id="Line-2-Copy-6" stroke="#979797" stroke-linecap="square"></path>
+            <path d="M180,140 L460,80" id="Line-2-Copy-5" stroke="#979797" stroke-linecap="square"></path>
+            <path d="M460,80 L740,140" id="Line-2-Copy-10" stroke="#979797" stroke-linecap="square"></path>
+            <path d="M740,140 L820,420" id="Line-2-Copy-11" stroke="#979797" stroke-linecap="square"></path>
+            <path d="M460,760 L760,700" id="Line-2-Copy-2" stroke="#979797" stroke-linecap="square"></path>
+            <g id="Small-Icon" transform="translate(660.000000, 41.000000)" stroke="#000000">
+                <polygon id="Path" fill="#FFFFFF" fill-rule="evenodd" stroke-linejoin="round" points="40 0 200 0 200 200 0 200 0 40"></polygon>
+                <polyline id="Path-2" stroke-linejoin="round" points="0 39.5939086 39.5939086 39.5939086 39.5939086 0"></polyline>
+                <path d="M60.7807107,39.6666907 L180.342766,39.6666907" id="Line-3-Copy-2" stroke-linecap="square"></path>
+                <path d="M21.4931789,79.734055 L180.342766,79.734055" id="Line-3-Copy-3" stroke-linecap="square"></path>
+                <path d="M21.4931789,119.400746 L180.342766,119.400746" id="Line-3-Copy-4" stroke-linecap="square"></path>
+                <polyline id="Line-3-Copy-5" stroke-linecap="square" points="21.5931472 159.017352 38.1260325 159.017352 180.342766 159.017352"></polyline>
+            </g>
+            <g id="Small-Icon" transform="translate(720.000000, 320.000000)" stroke="#000000">
+                <polygon id="Path" fill="#FFFFFF" fill-rule="evenodd" stroke-linejoin="round" points="40 0 200 0 200 200 0 200 0 40"></polygon>
+                <polyline id="Path-2" stroke-linejoin="round" points="0 39.5939086 39.5939086 39.5939086 39.5939086 0"></polyline>
+                <path d="M60.7807107,39.6666907 L180.342766,39.6666907" id="Line-3-Copy-2" stroke-linecap="square"></path>
+                <path d="M21.4931789,79.734055 L180.342766,79.734055" id="Line-3-Copy-3" stroke-linecap="square"></path>
+                <path d="M21.4931789,119.400746 L180.342766,119.400746" id="Line-3-Copy-4" stroke-linecap="square"></path>
+                <polyline id="Line-3-Copy-5" stroke-linecap="square" points="21.5931472 159.017352 38.1260325 159.017352 180.342766 159.017352"></polyline>
+            </g>
+            <g id="Small-Icon" transform="translate(655.000000, 599.000000)" stroke="#000000">
+                <polygon id="Path" fill="#FFFFFF" fill-rule="evenodd" stroke-linejoin="round" points="40 0 200 0 200 200 0 200 0 40"></polygon>
+                <polyline id="Path-2" stroke-linejoin="round" points="0 39.5939086 39.5939086 39.5939086 39.5939086 0"></polyline>
+                <path d="M60.7807107,39.6666907 L180.342766,39.6666907" id="Line-3-Copy-2" stroke-linecap="square"></path>
+                <path d="M21.4931789,79.734055 L180.342766,79.734055" id="Line-3-Copy-3" stroke-linecap="square"></path>
+                <path d="M21.4931789,119.400746 L180.342766,119.400746" id="Line-3-Copy-4" stroke-linecap="square"></path>
+                <polyline id="Line-3-Copy-5" stroke-linecap="square" points="21.5931472 159.017352 38.1260325 159.017352 180.342766 159.017352"></polyline>
+            </g>
+            <g id="Small-Icon" transform="translate(360.000000, 640.000000)" stroke="#000000">
+                <polygon id="Path" fill="#FFFFFF" fill-rule="evenodd" stroke-linejoin="round" points="40 0 200 0 200 200 0 200 0 40"></polygon>
+                <polyline id="Path-2" stroke-linejoin="round" points="0 39.5939086 39.5939086 39.5939086 39.5939086 0"></polyline>
+                <path d="M60.7807107,39.6666907 L180.342766,39.6666907" id="Line-3-Copy-2" stroke-linecap="square"></path>
+                <path d="M21.4931789,79.734055 L180.342766,79.734055" id="Line-3-Copy-3" stroke-linecap="square"></path>
+                <path d="M21.4931789,119.400746 L180.342766,119.400746" id="Line-3-Copy-4" stroke-linecap="square"></path>
+                <polyline id="Line-3-Copy-5" stroke-linecap="square" points="21.5931472 159.017352 38.1260325 159.017352 180.342766 159.017352"></polyline>
+            </g>
+            <g id="Small-Icon" transform="translate(360.000000, 320.000000)" stroke="#000000">
+                <polygon id="Path" fill="#FFFFFF" fill-rule="evenodd" stroke-linejoin="round" points="40 0 200 0 200 200 0 200 0 40"></polygon>
+                <polyline id="Path-2" stroke-linejoin="round" points="0 39.5939086 39.5939086 39.5939086 39.5939086 0"></polyline>
+                <path d="M60.7807107,39.6666907 L180.342766,39.6666907" id="Line-3-Copy-2" stroke-linecap="square"></path>
+                <path d="M21.4931789,79.734055 L180.342766,79.734055" id="Line-3-Copy-3" stroke-linecap="square"></path>
+                <path d="M21.4931789,119.400746 L180.342766,119.400746" id="Line-3-Copy-4" stroke-linecap="square"></path>
+                <polyline id="Line-3-Copy-5" stroke-linecap="square" points="21.5931472 159.017352 38.1260325 159.017352 180.342766 159.017352"></polyline>
+            </g>
+            <g id="Small-Icon" transform="translate(360.000000, 0.000000)" stroke="#000000">
+                <polygon id="Path" fill="#FFFFFF" fill-rule="evenodd" stroke-linejoin="round" points="40 0 200 0 200 200 0 200 0 40"></polygon>
+                <polyline id="Path-2" stroke-linejoin="round" points="0 39.5939086 39.5939086 39.5939086 39.5939086 0"></polyline>
+                <path d="M60.7807107,39.6666907 L180.342766,39.6666907" id="Line-3-Copy-2" stroke-linecap="square"></path>
+                <path d="M21.4931789,79.734055 L180.342766,79.734055" id="Line-3-Copy-3" stroke-linecap="square"></path>
+                <path d="M21.4931789,119.400746 L180.342766,119.400746" id="Line-3-Copy-4" stroke-linecap="square"></path>
+                <polyline id="Line-3-Copy-5" stroke-linecap="square" points="21.5931472 159.017352 38.1260325 159.017352 180.342766 159.017352"></polyline>
+            </g>
+            <g id="Small-Icon" transform="translate(60.000000, 600.000000)" stroke="#000000">
+                <polygon id="Path" fill="#FFFFFF" fill-rule="evenodd" stroke-linejoin="round" points="40 0 200 0 200 200 0 200 0 40"></polygon>
+                <polyline id="Path-2" stroke-linejoin="round" points="0 39.5939086 39.5939086 39.5939086 39.5939086 0"></polyline>
+                <path d="M60.7807107,39.6666907 L180.342766,39.6666907" id="Line-3-Copy-2" stroke-linecap="square"></path>
+                <path d="M21.4931789,79.734055 L180.342766,79.734055" id="Line-3-Copy-3" stroke-linecap="square"></path>
+                <path d="M21.4931789,119.400746 L180.342766,119.400746" id="Line-3-Copy-4" stroke-linecap="square"></path>
+                <polyline id="Line-3-Copy-5" stroke-linecap="square" points="21.5931472 159.017352 38.1260325 159.017352 180.342766 159.017352"></polyline>
+            </g>
+            <g id="Small-Icon" transform="translate(0.000000, 320.000000)" stroke="#000000">
+                <polygon id="Path" fill="#FFFFFF" fill-rule="evenodd" stroke-linejoin="round" points="40 0 200 0 200 200 0 200 0 40"></polygon>
+                <polyline id="Path-2" stroke-linejoin="round" points="0 39.5939086 39.5939086 39.5939086 39.5939086 0"></polyline>
+                <path d="M60.7807107,39.6666907 L180.342766,39.6666907" id="Line-3-Copy-2" stroke-linecap="square"></path>
+                <path d="M21.4931789,79.734055 L180.342766,79.734055" id="Line-3-Copy-3" stroke-linecap="square"></path>
+                <path d="M21.4931789,119.400746 L180.342766,119.400746" id="Line-3-Copy-4" stroke-linecap="square"></path>
+                <polyline id="Line-3-Copy-5" stroke-linecap="square" points="21.5931472 159.017352 38.1260325 159.017352 180.342766 159.017352"></polyline>
+            </g>
+            <g id="Small-Icon" transform="translate(80.000000, 40.000000)" stroke="#000000">
+                <polygon id="Path" fill="#FFFFFF" fill-rule="evenodd" stroke-linejoin="round" points="40 0 200 0 200 200 0 200 0 40"></polygon>
+                <polyline id="Path-2" stroke-linejoin="round" points="0 39.5939086 39.5939086 39.5939086 39.5939086 0"></polyline>
+                <path d="M60.7807107,39.6666907 L180.342766,39.6666907" id="Line-3-Copy-2" stroke-linecap="square"></path>
+                <path d="M21.4931789,79.734055 L180.342766,79.734055" id="Line-3-Copy-3" stroke-linecap="square"></path>
+                <path d="M21.4931789,119.400746 L180.342766,119.400746" id="Line-3-Copy-4" stroke-linecap="square"></path>
+                <polyline id="Line-3-Copy-5" stroke-linecap="square" points="21.5931472 159.017352 38.1260325 159.017352 180.342766 159.017352"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>
