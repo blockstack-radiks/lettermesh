@@ -68,7 +68,7 @@ export default class EditBlogPost extends React.Component {
       query: {
         id: friendlyId(blogPost),
       },
-    }, `/posts/${blogPost._id}`);
+    }, `/posts/${friendlyId(blogPost)}`);
     console.log(blogPost);
   }
 
