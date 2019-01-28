@@ -65,7 +65,7 @@ class LetterMesh extends App {
     }
 
     const cookies = ctx.req && ctx.req.universalCookies && ctx.req.universalCookies.cookies;
-
+    console.log(radiksConfig);
     configure(radiksConfig);
 
 
@@ -76,6 +76,7 @@ class LetterMesh extends App {
   }
 
   componentDidMount() {
+    console.log(radiksConfig);
     configure(radiksConfig);
     const { router } = this.props;
     router.events.on('routeChangeStart', () => NProgress.start());
