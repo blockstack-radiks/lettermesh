@@ -68,11 +68,6 @@ export default class extends React.Component {
         <Label>
           <CloseCircleOutlineIcon onClick={() => this.toggle()} />
         </Label>
-        {/* <Item>
-          <Link href="/blogs">
-            <a>Your Blogs</a>
-          </Link>
-        </Item> */}
         <Item>
           <Link href="/blogs/new">
             <a>Create a new Blog</a>

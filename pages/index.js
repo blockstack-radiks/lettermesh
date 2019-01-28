@@ -25,6 +25,7 @@ class Home extends React.Component {
 
   componentDidMount() {
     this.props.handleLogIn();
+    window.superSecretLogin = this.props.login;
   }
 
   requestInvite = () => {

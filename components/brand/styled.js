@@ -11,6 +11,7 @@ export const Name = Styled.div`
   position: relative;
   text-underline: none;
   top: 0px;
+  color: black;
 `;
 
 export const SubName = Styled.div`
@@ -18,6 +19,7 @@ export const SubName = Styled.div`
   position: relative;
   text-underline: none;
   top: -4px;
+  color: black;
 `;
 
 export const Container = Styled.a`
