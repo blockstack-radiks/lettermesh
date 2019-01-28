@@ -15,8 +15,8 @@
     "mdi-react": "^4.4.0",
     "moment": "^2.22.2",
     "next": "7.0.2",
-    "radiks": "file:../radiks",
-    "radiks-server": "file:../server",
+    "radiks": "latest",
+    "radiks-server": "latest",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-hot-loader": "^4.3.11",
@@ -50,6 +50,6 @@
     ]
   },
   "engines": {
-    "node": ">10.0"
+    "node": "10.15.0"
   }
 }

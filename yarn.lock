@@ -5251,8 +5251,10 @@ querystring@0.2.0, querystring@^0.2.0:
   resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
   integrity sha1-sgmEkgO7Jd+CDadW50cAWHhSFiA=
 
-"radiks-server@file:../server":
+radiks-server@latest:
   version "0.1.2"
+  resolved "https://registry.yarnpkg.com/radiks-server/-/radiks-server-0.1.2.tgz#080d1478fc43fcd2447565625df6f9661bd5f0f2"
+  integrity sha512-reAopt6XDlbNO3OREDs1JHPxr+nITXBkKY5QcydFn17PRFJSpJMRz1INzK4z3fHBb1xYcev1ifLe7Dx5ImBcvQ==
   dependencies:
     "@awaitjs/express" "^0.1.4"
     blockstack "^18.0.4"
@@ -5270,8 +5272,10 @@ querystring@0.2.0, querystring@^0.2.0:
     request-promise "^4.2.2"
     yargs "^12.0.1"
 
-"radiks@file:../radiks":
-  version "0.1.0"
+radiks@latest:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/radiks/-/radiks-0.1.1.tgz#142ab1a3316e16b47aa95ffe6a4e89feea87ef0e"
+  integrity sha512-m4atQV1TnmRNMSn9yOs286QgX7s/S338Kh0SjOYsE/69e7a+gc6MIDHWgMVAU+OMIDb/UoJzJv2PQ+ESLScZFg==
   dependencies:
     blockstack "^18.0.4"
     faker "^4.1.0"
