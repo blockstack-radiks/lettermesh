@@ -51,6 +51,10 @@ a:link {
 `;
 
 const radiksConfig = getConfig().publicRuntimeConfig.radiks;
+if (typeof 'process' !== 'undefined') {
+  radiksConfig.apiServer = process.env.RADIKS_API_URL;
+}
+
 
 class LetterMesh extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -63,6 +67,7 @@ class LetterMesh extends App {
     const cookies = ctx.req && ctx.req.universalCookies && ctx.req.universalCookies.cookies;
 
     configure(radiksConfig);
+
 
     return {
       pageProps,
