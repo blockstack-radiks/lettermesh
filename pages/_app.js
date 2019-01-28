@@ -60,14 +60,14 @@ class LetterMesh extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
 
+    console.log(radiksConfig);
+    configure(radiksConfig);
+
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx);
     }
 
     const cookies = ctx.req && ctx.req.universalCookies && ctx.req.universalCookies.cookies;
-    console.log(radiksConfig);
-    configure(radiksConfig);
-
 
     return {
       pageProps,
