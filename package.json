@@ -48,5 +48,8 @@
       "components/*",
       "lib/*"
     ]
+  },
+  "engines": {
+    "node": ">10.0"
   }
 }
