@@ -26,7 +26,7 @@ export default class NewBlog extends React.Component {
 
   async componentDidMount() {
     NProgress.start();
-    const blog = await Blog.findById(this.props.id);
+    const blog = await Blog.findByUrlParam(this.props.id);
     console.log(blog);
     this.setState({
       name: blog.attrs.name,

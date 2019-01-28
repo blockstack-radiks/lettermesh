@@ -8,7 +8,7 @@ import PostBody from '../../components/post-body';
 export default class ShowBlogPost extends React.Component {
   static async getInitialProps({ query }) {
     const { id } = query;
-    const blogPost = await fetchBlogPost(id);
+    const blogPost = await fetchBlogPost(id.split('-')[0]);
     return {
       blogPost,
       blogHeaderImage: blogPost.blog.typefaceImageUrl,

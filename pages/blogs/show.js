@@ -9,6 +9,7 @@ import Blog from '../../models/blog';
 import BlogPost from '../../models/blogPost';
 import Hr from '../../components/hr';
 import { Table, Th, Td } from '../../components/table';
+import { friendlyId } from '../../lib/utils';
 
 export default class ShowBlog extends React.Component {
   static getInitialProps({ query }) {
@@ -25,30 +26,33 @@ export default class ShowBlog extends React.Component {
   async componentDidMount() {
     NProgress.start();
     const { id } = this.props;
-    const [blog, blogPosts] = await Promise.all([
-      Blog.findById(id),
-      BlogPost.fetchList({
-        userGroupId: id,
-      }),
-    ]);
+    const blog = await Blog.findByUrlParam(id);
+    const blogPosts = await BlogPost.fetchList({
+      userGroupId: blog._id,
+    });
     this.setState({ blog, blogPosts }, () => {
       NProgress.done();
     });
   }
 
   blogPosts() {
-    return this.state.blogPosts.map(blogPost => (
+    const { blog, blogPosts } = this.state;
+    console.log(blog);
+    if (!blog) {
+      return '';
+    }
+    return blogPosts.map(blogPost => (
       <tr key={blogPost._id}>
         <Td>{blogPost.attrs.title}</Td>
         <Td>{blogPost.attrs.authorName}</Td>
         <Td>{moment(blogPost.attrs.createdAt).format('MMMM Do, YYYY')}</Td>
         <Td>
-          <Link href={`/blogs/${this.props.id}/posts/${blogPost._id}/edit`}>
+          <Link href={`/blogs/${friendlyId(blog)}/posts/${friendlyId(blogPost)}/edit`}>
             <Button size="small" ml={0}>
               Edit
             </Button>
           </Link>
-          <Link href={`/posts/${blogPost._id}`}>
+          <Link href={`/posts/${friendlyId(blogPost)}`}>
             <Button size="small" ml={0}>
               View
             </Button>

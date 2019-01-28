@@ -7,15 +7,16 @@ import { loadUserData } from 'blockstack/lib/auth/authApp';
 import Card from '../../../components/card';
 import Input from '../../../components/input';
 
-import { makeGraphiteUrl } from '../../../lib/utils';
+import { makeGraphiteUrl, friendlyId } from '../../../lib/utils';
 
 import BlogPost from '../../../models/blogPost';
+// import Blog from '../../../models/blog';
 
 export default class EditBlogPost extends React.Component {
-  static getInitialProps({ query }) {
+  static async getInitialProps({ query }) {
     console.log(query);
     return {
-      blogId: query.blogId,
+      // blogId: query.blogId,
       id: query.id,
     };
   }
@@ -30,7 +31,7 @@ export default class EditBlogPost extends React.Component {
   async componentDidMount() {
     NProgress.start();
     const { id } = this.props;
-    const blogPost = await BlogPost.findById(id);
+    const blogPost = await BlogPost.findByUrlParam(id);
     const {
       title, graphiteID, graphiteUsername, headerImageUrl,
     } = blogPost.attrs;
@@ -65,7 +66,7 @@ export default class EditBlogPost extends React.Component {
     Router.push({
       pathname: '/posts/show',
       query: {
-        id: blogPost._id,
+        id: friendlyId(blogPost),
       },
     }, `/posts/${blogPost._id}`);
     console.log(blogPost);

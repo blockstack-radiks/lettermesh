@@ -21,6 +21,13 @@ export default class Blog extends UserGroup {
     },
   }
 
+  static findByUrlParam(urlParam, options = { decrypt: true }) {
+    const friendlyId = urlParam.split('-')[0];
+    return this.findOne({
+      friendlyId,
+    }, options);
+  }
+
   beforeSave() {
     this.attrs.friendlyId = this.attrs.friendlyId || makeShortId();
     return this;

@@ -8,12 +8,14 @@ import Card from '../../../components/card';
 import Input from '../../../components/input';
 
 import BlogPost from '../../../models/blogPost';
+import Blog from '../../../models/blog';
 
 export default class NewBlogPost extends React.Component {
-  static getInitialProps({ query }) {
-    console.log(query);
+  static async getInitialProps({ query }) {
+    const { id } = query;
+    const { _id } = await Blog.findByUrlParam(id);
     return {
-      blogId: query.id,
+      blogId: _id,
     };
   }
 
