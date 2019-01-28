@@ -10,6 +10,8 @@ import Input from '../../../components/input';
 import BlogPost from '../../../models/blogPost';
 import Blog from '../../../models/blog';
 
+import { friendlyId } from '../../../lib/utils';
+
 export default class NewBlogPost extends React.Component {
   static async getInitialProps({ query }) {
     const { id } = query;
@@ -47,9 +49,9 @@ export default class NewBlogPost extends React.Component {
     Router.push({
       pathname: '/posts/show',
       query: {
-        id: blogPost._id,
+        id: friendlyId(blogPost),
       },
-    }, `/posts/${blogPost._id}`);
+    }, `/posts/${friendlyId(blogPost)}`);
     console.log(blogPost);
 
     // NProgress.done();
