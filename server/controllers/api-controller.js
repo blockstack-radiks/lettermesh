@@ -1,15 +1,16 @@
 const express = require('express');
+const { decorateApp } = require('@awaitjs/express');
 
 const { getGraphiteHTML } = require('../helpers');
 
 const makeApiController = (db) => {
-  const router = express.Router();
+  const router = decorateApp(express.Router());
 
-  router.get('/posts/:id', async (req, res) => {
+  router.getAsync('/posts/:id', async (req, res) => {
     console.log(req.params.id);
     // const blogPost = await db.findOne({ _id: req.params.id });
     const match = {
-      $match: { _id: req.params.id },
+      $match: { friendlyId: req.params.id },
     };
     const blogLookup = {
       $lookup: {
