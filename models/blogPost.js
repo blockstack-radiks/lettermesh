@@ -2,6 +2,8 @@ import { Model } from 'radiks';
 import { makeShortId } from '../lib/utils';
 
 export default class BlogPost extends Model {
+  static className = 'BlogPost'
+
   static schema = {
     title: {
       type: String,
