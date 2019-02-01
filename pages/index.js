@@ -16,7 +16,9 @@ import { friendlyId } from '../lib/utils';
 
 class Home extends React.Component {
   static async getInitialProps() {
-    const blogs = await Blog.fetchList({}, { decrypt: false });
+    const blogs = await Blog.fetchList({
+      name: 'LetterMesh,radiks.js',
+    }, { decrypt: false });
     return {
       blogs,
     };

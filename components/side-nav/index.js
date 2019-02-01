@@ -19,6 +19,7 @@ export default class extends React.Component {
   async componentDidMount() {
     if (loadUserData()) {
       const blogs = await UserGroup.myGroups();
+      // console.log('blogs', blogs);
       this.setState({ blogs });
     }
   }
@@ -30,7 +31,7 @@ export default class extends React.Component {
 
   blogs() {
     return this.state.blogs.map(blog => (
-      <div key={blog._id}>
+      <>
         <Divider />
         <Label>{blog.attrs.name}</Label>
         <Item>
@@ -57,7 +58,7 @@ export default class extends React.Component {
             <a>Write a New Post</a>
           </Link>
         </Item>
-      </div>
+      </>
     ));
   }
 

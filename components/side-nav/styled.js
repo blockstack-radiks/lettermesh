@@ -2,7 +2,7 @@ import Styled, { css } from 'styled-components';
 import { Flex, Box } from 'blockstack-ui';
 
 export const Container = Styled(Flex)`
-  height: 100vh;
+  min-height: 100vh;
   width: 300px;
   z-index: 100;
   overflow-y: scroll;
