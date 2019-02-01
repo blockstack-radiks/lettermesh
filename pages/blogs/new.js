@@ -8,6 +8,8 @@ import Blog from '../../models/blog';
 import Card from '../../components/card';
 import Input from '../../components/input';
 
+import { friendlyId } from '../../lib/utils';
+
 
 export default class NewBlog extends React.Component {
   state = {
@@ -25,9 +27,9 @@ export default class NewBlog extends React.Component {
     Router.push({
       pathname: '/blogs/show',
       query: {
-        id: blog._id,
+        id: friendlyId(blog),
       },
-    }, `/blogs/${blog._id}`);
+    }, `/blogs/${friendlyId(blog)}`);
   }
 
   render() {
