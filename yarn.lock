@@ -5262,10 +5262,10 @@ radiks-server@latest:
     request-promise "^4.2.2"
     yargs "^12.0.1"
 
-radiks@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/radiks/-/radiks-0.1.2.tgz#4705c527505b706be85962eb60ef9026f443ff96"
-  integrity sha512-cKAoVBYPesChZ6yU4dtHJLPKkIgJPMGAp7o46gOy8CI3IzplNXdQYt6oAXsoovl3Rd0xBbz4RcItksrAHhM2cQ==
+radiks@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/radiks/-/radiks-0.1.3.tgz#b91b6ceebfd372bd61cbe85234dce28b77df3eb6"
+  integrity sha512-MwQL5Ppew4lSI8zjxCSJ+uvNUzZdFGyIOEXyjbHnSR2bgsnR/xwXD570AXM5Y+mPwrCn4L30Qkr+7MzjWBu08A==
   dependencies:
     blockstack "^18.0.4"
     faker "^4.1.0"
