@@ -37,12 +37,17 @@ const handleLogIn = () => async function innerHandleSignIn(dispatch) {
   let userData = loadUserData();
   if (userData) {
     await GroupMembership.cacheKeys();
-    dispatch(gotUserData((User.currentUser())));
+    const user = User.currentUser();
+    await user.save();
+    dispatch(gotUserData(user));
+    console.log('existing user', user);
   } else if (isSignInPending()) {
     userData = await handlePendingSignIn();
     const user = await User.createWithCurrentUser();
     await GroupMembership.cacheKeys();
+    console.log('new user', user);
     dispatch(gotUserData((user)));
+    return user;
   }
 };
 
