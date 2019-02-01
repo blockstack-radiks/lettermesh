@@ -17,6 +17,7 @@ export const BlogCard = Styled.div`
     display: block;
     max-width: 80%;
     margin: 0px auto;
+    max-height: 80px;
   }
 `;
 
