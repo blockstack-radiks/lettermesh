@@ -74,8 +74,8 @@ class Home extends React.Component {
                       query: {
                         id: friendlyId(blog),
                       },
-                      as: `/blogs/${friendlyId(blog)}`,
                     }}
+                    as={`/blogs/${friendlyId(blog)}`}
                   >
                     <a>
                       <BlogCard>

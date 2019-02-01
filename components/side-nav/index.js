@@ -31,7 +31,7 @@ export default class extends React.Component {
 
   blogs() {
     return this.state.blogs.map(blog => (
-      <>
+      <React.Fragment key={blog._id}>
         <Divider />
         <Label>{blog.attrs.name}</Label>
         <Item>
@@ -42,23 +42,41 @@ export default class extends React.Component {
               query: {
                 id: friendlyId(blog),
               },
-              as: `/blogs/${friendlyId(blog)}`,
             }}
+            as={`/blogs/${friendlyId(blog)}`}
           >
             <a>View all Posts</a>
           </Link>
         </Item>
         <Item>
-          <Link href={`/blogs/${friendlyId(blog)}/edit`}>
+          <Link
+            prefetch
+            href={{
+              pathname: '/blogs/edit',
+              query: {
+                id: friendlyId(blog),
+              },
+            }}
+            as={`/blogs/${friendlyId(blog)}/edit`}
+          >
             <a>Edit Blog Details</a>
           </Link>
         </Item>
         <Item>
-          <Link href={`/blogs/${friendlyId(blog)}/posts/new`}>
+          <Link
+            prefetch
+            href={{
+              pathname: '/blogs/posts/new',
+              query: {
+                id: friendlyId(blog),
+              },
+            }}
+            as={`/blogs/${friendlyId(blog)}/posts/new`}
+          >
             <a>Write a New Post</a>
           </Link>
         </Item>
-      </>
+      </React.Fragment>
     ));
   }
 
