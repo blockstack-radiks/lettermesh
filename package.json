@@ -2,7 +2,8 @@
   "name": "create-next-example-app",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon server",
+    "dev": "node server",
+    "dev-watch": "nodemon server",
     "build": "next build",
     "start": "node server/index.js",
     "heroku-postbuild": "next build"

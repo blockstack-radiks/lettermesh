@@ -38,12 +38,12 @@ export default class extends React.Component {
           <Link
             prefetch
             href={{
-              pathname: '/blogs/show',
+              pathname: '/blogs/admin',
               query: {
                 id: friendlyId(blog),
               },
             }}
-            as={`/blogs/${friendlyId(blog)}`}
+            as={`/blogs/${friendlyId(blog)}/admin`}
           >
             <a>View all Posts</a>
           </Link>

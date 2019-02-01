@@ -57,11 +57,11 @@ export default class NewBlog extends React.Component {
     // console.log(blog);
     // console.log(this.state);
     Router.push({
-      pathname: '/blogs/show',
+      pathname: '/blogs/admin',
       query: {
         id: friendlyId(blog),
       },
-    }, `/blogs/${friendlyId(blog)}`);
+    }, `/blogs/${friendlyId(blog)}/admin`);
   }
 
   render() {
