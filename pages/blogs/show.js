@@ -69,7 +69,7 @@ export default class ShowBlog extends React.Component {
       <Box>
         <Type.h1 display="block">
           {blog.attrs.name}
-          <Link href={`/blogs/${blog._id}/edit`} passHref>
+          <Link href={`/blogs/${friendlyId(blog)}/edit`} passHref>
             <Button size="small" mt={4}>
               Edit
             </Button>
@@ -78,7 +78,7 @@ export default class ShowBlog extends React.Component {
         <Hr />
         <Type.h3 mt={3} display="block">
           Blog Posts
-          <Link href={`/blogs/${blog._id}/posts/new`} passHref>
+          <Link href={`/blogs/${friendlyId(blog)}/posts/new`} passHref>
             <Button size="small" mt={4}>
               Write a New Post
             </Button>
