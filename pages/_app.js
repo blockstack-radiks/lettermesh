@@ -5,7 +5,6 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { normalize } from 'polished';
 import { configure } from 'radiks';
-import getConfig from 'next/config';
 import { withRouter } from 'next/router';
 
 import theme from '../lib/theme';
@@ -50,10 +49,9 @@ a:link {
 }
 `;
 
-const radiksConfig = getConfig().publicRuntimeConfig.radiks;
-if (typeof 'process' !== 'undefined') {
-  radiksConfig.apiServer = process.env.RADIKS_API_URL;
-}
+const radiksConfig = {
+  apiServer: process.env.RADIKS_API_URL,
+};
 
 
 class LetterMesh extends App {
@@ -97,7 +95,10 @@ class LetterMesh extends App {
           <ThemeProvider theme={{ ...theme, transitions: ['unset', '.34s all cubic-bezier(.19,1,.22,1)'] }}>
             <Provider store={reduxStore}>
               <PersistGate persistor={persistor}>
-                <Layout useContainer={useContainer} blogHeaderImage={pageProps && pageProps.blogHeaderImage}>
+                <Layout
+                  useContainer={useContainer}
+                  blogHeaderImage={pageProps && pageProps.blogHeaderImage}
+                >
                   <Component {...pageProps} serverCookies={cookies} />
                 </Layout>
               </PersistGate>
