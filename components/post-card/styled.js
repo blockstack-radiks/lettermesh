@@ -24,8 +24,8 @@ export const Body = Styled.div`
 
 export const Title = Styled.h3`
   color: white;
-  position: relative;
-  top: 120px;
+  position: absolute;
+  bottom: 10px;
   font-size: 22px;
   padding: 0 10px;
   display: block;
