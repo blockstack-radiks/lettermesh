@@ -55,7 +55,6 @@ export const ImageBG = Styled.div`
   width: 100%;
   height: 100%;
   z-index: -2;
-
-  background-image: url('/static/beach.jpg');
+  background-image: url('${({ src }) => src}');
   background-size: cover;
 `;

@@ -26,7 +26,7 @@ export default ({ post }) => (
           </Title>
         </Body>
         <Backdrop />
-        <ImageBG />
+        <ImageBG src={post.attrs.headerImageUrl} />
       </Container>
     </Anchor>
   </Link>
