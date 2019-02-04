@@ -87,7 +87,9 @@ class LetterMesh extends App {
       Component, pageProps, reduxStore, persistor, cookies,
     } = this.props;
 
-    const { useContainer } = pageProps;
+    const { useContainer, blogAttrs } = pageProps;
+
+    console.log(pageProps);
 
     return (
       <Container>
@@ -98,7 +100,7 @@ class LetterMesh extends App {
               <PersistGate persistor={persistor}>
                 <Layout
                   useContainer={useContainer}
-                  blogHeaderImage={pageProps && pageProps.blogHeaderImage}
+                  blogAttrs={blogAttrs}
                 >
                   <Component {...pageProps} serverCookies={cookies} />
                 </Layout>

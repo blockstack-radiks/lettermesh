@@ -2,9 +2,11 @@ import React from 'react';
 import { Flex, Box } from 'blockstack-ui';
 import BackburgerIcon from 'mdi-react/BackburgerIcon';
 import { loadUserData } from 'blockstack/lib/auth/authApp';
+import Link from 'next/link';
 
 import Brand from '../brand';
 import SideNav from '../side-nav';
+import { friendlyId } from '../../lib/utils';
 
 export default class Nav extends React.Component {
   constructor(props) {
@@ -13,13 +15,27 @@ export default class Nav extends React.Component {
   }
 
   render() {
-    const { blogHeaderImage } = this.props;
+    const { blogAttrs } = this.props;
     const useSideNav = (typeof window !== 'undefined' && !!loadUserData());
+    const friendlyIdAttrs = blogAttrs ? { attrs: blogAttrs } : null;
     return (
       <Flex mt={3} style={{ overflowX: 'hidden' }}>
         <Box mx={[2, 8]}>
-          {blogHeaderImage ? (
-            <img src={blogHeaderImage} alt="Header" height="40" />
+          {blogAttrs ? (
+            <Link
+              href={{
+                pathname: '/blogs/show',
+                query: {
+                  id: friendlyId(friendlyIdAttrs),
+                },
+              }}
+              as={`/blogs/${friendlyId(friendlyIdAttrs)}`}
+              prefetch
+            >
+              <a>
+                <img src={blogAttrs.typefaceImageUrl} alt="Header" height="40" />
+              </a>
+            </Link>
           ) : <Brand />}
         </Box>
         {useSideNav && (

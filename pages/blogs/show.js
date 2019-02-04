@@ -14,6 +14,7 @@ export default class ShowBlog extends React.Component {
       userGroupId: blog._id,
     }, { decrypt: false });
     return {
+      blogAttrs: blog.attrs,
       blog,
       posts,
       blogHeaderImage: blog.typefaceImageUrl,

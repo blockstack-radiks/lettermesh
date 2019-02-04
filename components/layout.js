@@ -9,21 +9,21 @@ export default class Layout extends React.Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
     useContainer: PropTypes.bool,
-    blogHeaderImage: PropTypes.string,
+    blogAttrs: PropTypes.object,
   }
 
   static defaultProps = {
     useContainer: true,
-    blogHeaderImage: null,
+    blogAttrs: null,
   }
 
   render() {
-    const { children, useContainer, blogHeaderImage } = this.props;
+    const { children, useContainer, blogAttrs } = this.props;
     const width = useContainer ? [1, 0.9] : 1;
     const mx = useContainer ? [2, 8] : 0;
     return (
       <div>
-        <Nav blogHeaderImage={blogHeaderImage} />
+        <Nav blogAttrs={blogAttrs} />
         <Flex>
           <Box width={width} mt={useContainer ? 6 : 2} mx={mx}>
             {children}
