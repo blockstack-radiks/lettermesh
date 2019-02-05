@@ -49,10 +49,10 @@ class Home extends React.Component {
                   Even if this website shuts down, your data is never lost.
                 </Type.h3>
                 <Type.p mt={6} display="block">
-                  Want to start writing? Currently we're invite-only while the platform gets a little more polish.
+                  Want to start writing?
                 </Type.p>
-                <Button onClick={this.requestInvite} my={6} href="mailto:hello@lettermesh.com">
-                  Request an Invite
+                <Button onClick={this.props.handleLogIn} my={6} href="mailto:hello@lettermesh.com">
+                  Sign In with Blockstack
                 </Button>
               </Box>
               <Box width={[0, 1 / 4]}>
