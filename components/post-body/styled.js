@@ -12,7 +12,7 @@ export const Content = Styled.div`
 
   p + p {
     text-indent: 1em;
-    margin-top: 60px;
+    margin-top: 40px;
   }
 
   img {
@@ -20,5 +20,9 @@ export const Content = Styled.div`
     margin-left: auto;
     margin-right: auto;
     display: block;
+  }
+
+  p + li {
+    margin-top: 40px;
   }
 `;
