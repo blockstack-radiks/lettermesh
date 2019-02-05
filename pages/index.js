@@ -49,9 +49,14 @@ class Home extends React.Component {
                   Even if this website shuts down, your data is never lost.
                 </Type.h3>
                 <Type.p mt={6} display="block">
-                  Want to start writing?
+                  Want to start writing? Or you can
+                  {' '}
+                  <a href="https://lettermesh.com/posts/$NiwHS@qF-welcome-to-lettermesh">
+                    Learn More
+                  </a>
+                  .
                 </Type.p>
-                <Button onClick={this.props.handleLogIn} my={6} href="mailto:hello@lettermesh.com">
+                <Button onClick={this.props.login} my={6}>
                   Sign In with Blockstack
                 </Button>
               </Box>
