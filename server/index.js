@@ -1,6 +1,7 @@
 const express = require('express');
 const next = require('next');
 const path = require('path');
+const secure = require('express-force-https');
 require('dotenv').config();
 
 const { setup } = require('radiks-server');
@@ -18,6 +19,10 @@ app.prepare().then(async () => {
   const server = express();
 
   const RadiksController = await setup();
+
+  if (!dev) {
+    server.use(secure);
+  }
 
   server.use('/radiks', RadiksController);
 
