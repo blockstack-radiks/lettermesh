@@ -11,7 +11,7 @@ export const Content = Styled.div`
   }
 
   p + p {
-    text-indent: 1em;
+    // text-indent: 1em;
     margin-top: 40px;
   }
 
@@ -22,7 +22,22 @@ export const Content = Styled.div`
     display: block;
   }
 
-  p + li {
+  li:first-child {
     margin-top: 40px;
+  }
+
+  li:not(:first-child) {
+    margin-top: 10px;
+  }
+
+  li {
+    list-style-position: outside;
+    line-height: 30px;
+    font-size: 18px;
+  }
+
+  code {
+    padding: 0 5px;
+    background-color: #e6e6e6;
   }
 `;
