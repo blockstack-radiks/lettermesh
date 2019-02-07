@@ -7,16 +7,15 @@ import {
   Icon, Name, SubName, Container,
 } from './styled';
 
-export default ({ href }) => (
-  <Link href="/" passHref>
-    <Container href={href}>
-      <Flex mx="auto" max-width="250px">
-        <Box><Icon src="/static/icon/xs-icon.svg" /></Box>
-        <Box ml={1}>
-          <Name>LetterMesh</Name>
-          <SubName>Decentralized Blogging</SubName>
-        </Box>
-      </Flex>
-    </Container>
+export default () => (
+  <Link
+    href={{
+      pathname: '/pages/_index',
+    }}
+    prefetch
+  >
+    <a>
+      <img src="https://s3.amazonaws.com/radiks/LetterMesh_TypeFace.svg" alt="LetterMesh" height="40" />
+    </a>
   </Link>
 );
