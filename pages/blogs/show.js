@@ -6,6 +6,7 @@ import BlogPost from '../../models/blogPost';
 
 import Hr from '../../components/hr';
 import PostCard from '../../components/post-card';
+import Head from '../../components/head';
 
 export default class ShowBlog extends React.Component {
   static async getInitialProps({ query }) {
@@ -34,6 +35,7 @@ export default class ShowBlog extends React.Component {
     const { blog } = this.props;
     return (
       <Flex flexWrap="wrap">
+        <Head title={blog.attrs.name} />
         <Box width={1}>
           <Type.h1 textAlign="center" display="block" color="black">
             {blog.attrs.name}
