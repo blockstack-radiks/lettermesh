@@ -2,6 +2,8 @@ import React from 'react';
 import CloseCircleOutlineIcon from 'mdi-react/CloseCircleOutlineIcon';
 import Link from 'next/link';
 import { loadUserData } from 'blockstack/lib/auth/authApp';
+// import { withRouter } from 'next/router';
+import Router from 'next/router';
 
 import { UserGroup } from 'radiks';
 import {
@@ -10,7 +12,7 @@ import {
 import { friendlyId } from '../../lib/utils';
 
 
-export default class extends React.Component {
+class SideNav extends React.Component {
   state = {
     blogs: [],
     open: false,
@@ -19,9 +21,9 @@ export default class extends React.Component {
   async componentDidMount() {
     if (loadUserData()) {
       const blogs = await UserGroup.myGroups();
-      // console.log('blogs', blogs);
       this.setState({ blogs });
     }
+    Router.events.on('routeChangeStart', () => this.setState({ open: false }));
   }
 
   toggle() {
@@ -97,3 +99,5 @@ export default class extends React.Component {
     );
   }
 }
+
+export default SideNav;
