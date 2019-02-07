@@ -10,9 +10,10 @@ import {
 export default () => (
   <Link
     href={{
-      pathname: '/pages/_index',
+      pathname: '/',
     }}
     prefetch
+    as="/"
   >
     <a>
       <img src="https://s3.amazonaws.com/radiks/LetterMesh_TypeFace.svg" alt="LetterMesh" height="40" />
