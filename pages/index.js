@@ -42,7 +42,7 @@ class Home extends React.Component {
         <Flex flexWrap="wrap">
           <Hero width={1} px={7} py={4}>
             <Flex>
-              <Box width={[1, 3 / 4]} pr={4}>
+              <Box width={[1, 3 / 4]} pr={[0, 4]}>
                 <Type.h1 color="black">LetterMesh is a decentralized blogging platform.</Type.h1>
                 <Type.h3 display="block" color="black" mt={6}>
                   With LetterMesh, you store your own data, so you can never lose it.
@@ -60,7 +60,7 @@ class Home extends React.Component {
                   Sign In with Blockstack
                 </Button>
               </Box>
-              <Box width={[0, 1 / 4]}>
+              <Box width={[0, 1 / 4]} overflow="hidden">
                 <img src="/static/mesh.svg" alt="Mesh" height="200" />
               </Box>
             </Flex>
@@ -105,10 +105,6 @@ class Home extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  currentUser: state.user.currentUser,
-});
-
 const mapDispatchToProps = dispatch => bindActionCreators(Object.assign({}, UserActions), dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(null, mapDispatchToProps)(Home);
